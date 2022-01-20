@@ -1,0 +1,94 @@
+
+#include "utils/dtostrf.h"
+
+char *_dtostrf(double val, signed char width, unsigned char prec, char *sout)
+{
+    // Commented code is the original version
+    /*char fmt[20];
+    sprintf(fmt, "%%%d.%df", width, prec);
+    sprintf(sout, fmt, val);
+    return sout;*/
+
+    // Handle negative numbers
+    uint8_t negative = 0;
+    if (val < 0.0)
+    {
+        negative = 1;
+        val = -val;
+    }
+
+    // Round correctly so that print(1.999, 2) prints as "2.00"
+    double rounding = 0.5;
+    for (int i = 0; i < prec; ++i) { rounding /= 10.0; }
+    
+
+    val += rounding;
+
+    // Extract the integer part of the number
+    uint32_t int_part = (uint32_t)val;
+    double remainder = val - (double)int_part;
+
+// Serial.printf("\n int_part=%u, prec=%u, dec_part=%u\n", int_part, prec, dec_part);
+// Serial.printf("\n int_part=%ul, prec=%u, \n", int_part, prec);
+
+    if (prec > 0)
+    {
+        // Extract digits from the remainder
+        uint32_t dec_part = 0;
+        double decade = 1.0;
+        for (int i = 0; i < prec; i++) { decade *= 10.0; }
+        remainder *= decade;
+        dec_part = (int)remainder;
+
+        if (negative) { sprintf(sout, "-%d.%0*d", int_part, prec, dec_part); }
+        // if (negative) { sprintf(sout, "-%lld.%0*lld", int_part, prec, dec_part); }
+        else
+        {
+            
+            sprintf(sout, "%d.%0*d", int_part, prec, dec_part);
+        }
+    }
+    else
+    {
+        if (negative) { sprintf(sout, "-%d", int_part); }
+        else
+        {
+            sprintf(sout, "%d", int_part);
+        }
+    }
+    // Handle minimum field width of the output string
+    // width is signed value, negative for left adjustment.
+    // Range -128,127
+    char fmt[129] = "";
+    unsigned int w = width;
+    if (width < 0)
+    {
+        negative = 1;
+        w = -width;
+    }
+    else
+    {
+        negative = 0;
+    }
+
+    if (strlen(sout) < w)
+    {
+        memset(fmt, ' ', 128);
+        fmt[w - strlen(sout)] = '\0';
+        if (negative == 0)
+        {
+            char *tmp =(char *) malloc(strlen(sout) + 1);
+            strcpy(tmp, sout);
+            strcpy(sout, fmt);
+            strcat(sout, tmp);
+            free(tmp);
+        }
+        else
+        {
+            // left adjustment
+            strcat(sout, fmt);
+        }
+    }
+
+    return sout;
+}

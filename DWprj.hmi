@@ -1,0 +1,17 @@
+[INIT]
+PICFIX=1
+VARCount=64
+Version=-1
+SCREENDSIZE=480X272
+SPADDRESS=5000
+[IMG]
+00=00PowerPointImage.jpg
+01=01PowerPointImage.jpg
+02=02PowerPointImage.jpg
+03=03PowerPointImage.jpg
+04=04PowerPointImage.jpg
+05=05PowerPointImage.jpg
+06=06PowerPointImage.jpg
+07=07PowerPointImage.jpg
+08=08PowerPointImage.jpg
+09=09PowerPointImage.jpg

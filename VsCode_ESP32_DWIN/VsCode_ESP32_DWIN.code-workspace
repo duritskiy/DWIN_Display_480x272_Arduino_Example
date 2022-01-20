@@ -1,0 +1,111 @@
+{
+
+
+"launch":
+
+{
+    "version": "0.2.0",
+    "configurations": 
+    [
+        {
+            "type": "browser-preview",
+            "request": "launch",
+            "name": "Browser Preview: Launch",
+            "url": "http://localhost",
+            // "url": "http://esp32.local",
+            
+            "webRoot": "${workspaceFolder}/data_dev"
+        }
+    ]
+},
+
+
+    "folders": 
+    [
+		{
+			"path": "."
+		}
+    ],
+
+    "settings": 
+    {
+        "actionButtons": 
+        {
+            "defaultColor": "#ffFF34", // Can also use string color names.
+            "loadNpmCommands":false, // Disables automatic generation of actions for npm commands.
+            "reloadButton":"♻️", // Custom reload button text or icon (default ↻). null value enables automatic reload on configuration change
+            "commands": [
+                {
+                    // "cwd": "/home/custom_folder", 	// Terminal initial folder ${workspaceFolder} and os user home as defaults
+                    "name": "spiffs",
+                    "color": "#ffFF34",
+                    "singleInstance": true,
+                    
+                    "command": "upload_spiffs.bat", // This is executed in the terminal.
+                    // "command": "cargo run ${file}", // This is executed in the terminal.
+                }
+            ]
+        },
+        "files.associations": {
+            "*.ino": "cpp",
+            "*.m1s": "vb",
+            "*.scpost": "lua",
+            "array": "cpp",
+            "*.tcc": "cpp",
+            "cctype": "cpp",
+            "clocale": "cpp",
+            "cmath": "cpp",
+            "cstdarg": "cpp",
+            "cstddef": "cpp",
+            "cstdint": "cpp",
+            "cstdio": "cpp",
+            "cstdlib": "cpp",
+            "cstring": "cpp",
+            "ctime": "cpp",
+            "cwchar": "cpp",
+            "cwctype": "cpp",
+            "deque": "cpp",
+            "list": "cpp",
+            "unordered_map": "cpp",
+            "unordered_set": "cpp",
+            "vector": "cpp",
+            "exception": "cpp",
+            "algorithm": "cpp",
+            "functional": "cpp",
+            "system_error": "cpp",
+            "tuple": "cpp",
+            "type_traits": "cpp",
+            "fstream": "cpp",
+            "initializer_list": "cpp",
+            "iomanip": "cpp",
+            "iosfwd": "cpp",
+            "iostream": "cpp",
+            "istream": "cpp",
+            "limits": "cpp",
+            "memory": "cpp",
+            "new": "cpp",
+            "ostream": "cpp",
+            "numeric": "cpp",
+            "sstream": "cpp",
+            "stdexcept": "cpp",
+            "streambuf": "cpp",
+            "cinttypes": "cpp",
+            "utility": "cpp",
+            "typeinfo": "cpp",
+            "random": "cpp",
+            "bitset": "cpp",
+            "string": "cpp",
+            "regex": "cpp",
+            "dgus_util.h": "c",
+            "swap_endian.h": "c",
+            "dgus_display.h": "c",
+            "tcolor16bit.h": "c",
+            "dgus_t5lprotocol.h": "c",
+            "idguswidget.h": "c",
+            "dtostrf.h": "c",
+            "arduino.h": "c",
+            "stdint.h": "c",
+            "_default_types.h": "c"
+        }
+    }
+}
