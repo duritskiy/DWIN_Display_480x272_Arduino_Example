@@ -1,5 +1,5 @@
 # DWIN Display 480x272 Project + DGUS Arduino Library 
-
+![This is an image](https://github.com/duritskiy/DWIN_Display_480x272_Arduino_Example/blob/main/DWIN_SOURCE/00PowerPointImage.jpg)
 
 #### [PowerPointImage.ppt](https://github.com/duritskiy/DWIN_Display_480x272_Arduino_Example/blob/main/PowerPointImage.ppt) - это проект скринов созданный в PowerPoint
 
@@ -16,6 +16,9 @@
 - 26_Icon.icl
 
 
+#### [DWprj.hmi](https://github.com/duritskiy/DWIN_Display_480x272_Arduino_Example/blob/main/DWprj.hmi) - DGUS проект.
+Программу искать на сайте [http://dwin.com.cn/service/en/file/id/30](http://dwin.com.cn/service/en/file/id/30) допустим эту "DGUS_V7626 (suitable for T5L)"
+
 
  #### [VsCode_ESP32_DWIN](https://github.com/duritskiy/DWIN_Display_480x272_Arduino_Example/tree/main/VsCode_ESP32_DWIN) - это папка с VSCode-проектом.
 Как уже сказал пример написан в среде VSCode, с использованием framework = arduino, под контроллер ESP32.
@@ -26,3 +29,6 @@
  #### [/VsCode_ESP32_DWIN/lib/DGUS_ARDUINO_LIB](https://github.com/duritskiy/DWIN_Display_480x272_Arduino_Example/tree/main/VsCode_ESP32_DWIN/lib/DGUS_ARDUINO_LIB) - библиотека для связи Arduino и DWIN дисплея.
  
  #### [DGUS_ARDUINO_ESP32.h](https://github.com/duritskiy/DWIN_Display_480x272_Arduino_Example/blob/main/VsCode_ESP32_DWIN/lib/DGUS_ARDUINO_LIB/DGUS_ARDUINO_ESP32.h) - драйвер привязывающий библиотеку к ардуине на ESP32. С AVR`ами не проверял, дамаю на основе DGUS_ARDUINO_ESP32.h можно написать avr-адаптацию DGUS_ARDUINO_AVR.h. Но у меня пока нет желания это делать. Если кто сделает, поделитесь - я добавлю в библиотеку.
+
+
+
